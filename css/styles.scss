@@ -1,0 +1,597 @@
+
+$white: rgba(236, 240, 241,1.0)!important;
+$yellow:#f6cd4c;
+$pom: rgba(192, 57, 43,1.0);
+$transparent: transparent !important;
+$padding: 25px;
+
+@mixin bottom{
+	padding-bottom:60px;
+}
+@mixin center{
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+}
+
+@mixin subheaders{
+
+	font-size: 1.7em;
+	text-transform:  uppercase;
+	text-align: center;
+	font-weight: 600;
+	padding-bottom: 15px;
+	padding-top: 35px;
+
+}
+
+@mixin padding{
+	padding: 0 5vh 0 5vh;
+}
+@mixin format{
+	p{
+		text-align: center;
+	}
+	h2.subHeaders{
+		@include subheaders;
+	}
+
+	p.description{
+		padding-bottom: 20px;
+	}
+}
+
+@mixin button{
+	.btn-default{
+		width: 130px!important;
+	  	padding: 5px!important;
+	  	border-radius: 0 !important;
+	  	background: transparent;
+	  	border: 3px $pom solid;
+	  	color: $white;
+	  	@include fadeTransition;
+	    @include center;
+
+
+		&:hover{
+		  	cursor: pointer;
+		  	background: $pom;
+		  	border: 3px solid $pom;
+		  	color: $white;
+
+		}
+	}
+
+}
+
+
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+/* These are the classes that are going to be applied: */
+.column { float: left; }
+.size-1of3 { width: 33.333%; }
+
+
+
+@mixin fadeTransition{
+	-webkit-transition: background 0.3s ease-out;
+	-moz-transition: background 0.3s ease-out;
+	-o-transition: background 0.3s ease-out;
+	transition: background 0.3s ease-out;
+}
+
+@mixin textTransition{
+	-webkit-transition: color 0.3s ease-out;
+	-moz-transition: color 0.3s ease-out;
+	-o-transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+}
+
+
+#grid[data-columns]::before {
+	content: '3 .column.size-1of3';
+}
+
+/* These are the classes that are going to be applied: */
+.column { float: left; }
+.size-1of3 { width: 33.333%; }
+
+
+/******* General CSS ********/ 
+ 
+
+html, body{
+	height: 100%;
+}
+
+body{
+	font-family: 'Raleway', sans-serif!important;
+}
+
+*{
+	
+	border-radius: 0px !important;
+}
+ 
+.container-fluid{
+	padding: 0 !important;
+}
+
+a{
+	color: $pom;
+	@include textTransition;
+	text-decoration: none!important;
+}
+
+a:hover{
+	cursor: pointer;
+	color: $pom;
+	text-decoration: none!important;
+
+}
+
+p{
+	font-size: 1.2em;
+}
+
+.white{
+	color: $white;
+}
+
+
+/*.parallaxParent {
+		height: 100vh;
+		overflow: hidden;
+	}
+
+.parallaxParent > * {
+		height: 200%;
+		width: 100%;
+		position: relative;
+		top: 20%;
+
+	}
+
+.parallaxParent1 {
+		height: 50vh;
+		overflow: hidden;
+	}*/
+
+.parallaxParent {
+	height: 100vh;
+	overflow: hidden;
+}
+.parallaxParent > * {
+	height: 200%;
+	position: relative;
+	top: 20%;
+	}
+
+
+#photography, #cinematography, .cinema, #contact{
+	width: 100%;
+	height: 50vh;
+}
+
+
+
+/******* Default Nav Override ********/ 
+ 
+
+.fa-bars{
+  	color: #f4f4f4 !important;
+  	background: $pom;
+  	opacity: 0.5;
+  	padding: 10px;
+  	@include fadeTransition;
+
+		&:hover{
+		  	cursor: pointer;
+		  	opacity: 1;
+		  
+		  	background: $pom;
+
+		}
+}
+
+
+
+.navbar-default{
+	background: transparent!important;
+}
+
+.navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+		background-color: transparent !important;
+	}
+
+	.navbar-default .navbar-toggle{
+		border: none !important;
+		border-color: none !important;
+		margin-top: 14px !important;
+		color: white;
+	}
+
+.navbar .navbar-nav>li>a{
+	color: $white;
+	font-weight: 400;
+}
+
+
+.icon-bar:hover{
+	background-color: $yellow;
+	cursor: pointer;
+}
+
+.navbar-toggle{
+	float: left!important;
+}
+
+.navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+}
+
+
+/******* Navigation ********/ 
+ 
+
+
+#navbar{
+	padding-top: 10px!important;
+
+}
+
+
+.navbar-default{
+  border-color: $transparent;
+  padding: 5px 0 5px 0;
+
+	h1.logo{
+		color: $white;
+	  	font-size: 2em;
+	  	font-weight: 400;
+	  	text-transform: uppercase;
+	  	/*text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);*/
+	  	letter-spacing: 2px;
+	}
+
+  	span.lastname{
+		display: inline;
+		font-weight: 700 ;
+		color: $yellow;
+	}
+
+}
+
+
+
+/******* Splash Page ********/ 
+ 
+
+.splash{
+	@include center;
+	@include padding;
+	background: rgba(231, 76, 60,1.0);
+	/*background-image: 
+		linear-gradient(
+          rgba(0, 0, 0, 0.62),
+          rgba(0, 0, 0, 0.62)
+        ),
+        url("../img/bg.jpeg");*/
+		background-position: center center;
+	  	background-repeat: no-repeat;
+	  	backface-visibility: hidden;
+	  	background-attachment: fixed;
+	  	background-size:cover;
+
+	.icon{
+		padding-top: 50vh;
+
+	}
+	.flat-icon {
+
+	    padding:23px 28px;
+	    font-size: 45px;
+	    font-weight: bold;
+	    display: inline-block;
+	    line-height: 100%;
+	    overflow: hidden;
+	    text-transform: uppercase;
+	    margin-right: 15px;
+
+	}
+
+
+	h1.splash-text{
+		color: rgba(255, 255, 255, 0.9);
+		padding-top: 50vh;
+		font-weight: 600;
+		text-align: right;
+		font-size: 4em;
+		#js-rotating{
+			color: #f1c40f;
+			display:block;
+		
+
+		}
+	}
+	h2.tagline{
+		color: rgba(255, 255, 255, 0.9);
+	
+		font-weight: 300;
+		text-align: right;
+		font-size: 1.5em;
+		padding-bottom: 20px;
+		
+	}
+
+	span.span-tagline{
+		display: block;
+
+	}
+
+	@include button;
+}
+
+/******* PHOTOGRAPHY ********/ 
+
+.photo{
+	
+	p{
+		text-align: center;
+	}
+	h2.subHeaders{
+		@include subheaders;
+	}
+
+	p.description{
+		padding-bottom: 20px;
+	}
+
+}
+
+#photography{
+	height: auto;
+}
+
+.img2{
+background-image: 
+		linear-gradient(
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.2)
+        ),
+       	url("../img/1.jpeg");
+		background-position: center center;
+	  	background-repeat: no-repeat;
+
+}
+
+
+
+
+
+.img3{
+	background-image: 	
+		linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
+        url("../img/scenary/scene3.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  
+}
+
+
+/******* CINEMATAGRAPHY ********/ 
+
+
+.cinema{
+	background: #EEECEA;
+	@include format;
+	@include bottom;
+
+	padding: 25px;
+	.pad{
+		margin: 2px;
+
+	}
+}
+
+.video{
+	margin: 0 auto!important;
+	display: block;
+}
+
+/******* CONTACT ********/ 
+
+#contact{
+	@include format;
+	color: black;
+
+	background: $yellow;
+	img.me{
+		width: 100px!important;
+		height: auto;
+	}
+	img.icons{
+		width: 40px;
+		height: auto;
+	}
+	padding-bottom: 30px;
+	ul li{
+		display:inline;
+		padding: 10px;
+	}
+}
+
+p.contact{
+
+	text-align: left;
+	
+}
+
+
+
+span.resume{
+	padding-top: 15px;
+	display: block;
+}
+
+
+/******* FOOTER ********/ 
+
+footer{
+	@include button;
+	background: black;
+	padding: 10px;
+	height: 100px;
+
+	.top{
+		float: left!important;
+		margin: 20px 0px 10px 25px;
+	}
+}
+
+
+
+
+
+
+
+/******* Added Media Queries ********/ 
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+	padding: 0!important;
+}
+
+
+
+
+@media(max-width:767px){
+
+	.navbar-default{
+		h1.logo{
+			font-size: 1.4em;
+			margin-left: 20px;
+		}
+	}
+
+	.splash{
+
+		h1.splash-text{
+			padding-top: 70vh;
+			font-size: 2.5em;
+		}
+
+		h2.tagline{
+			font-size: 1.3em;
+		}
+	}
+	.navbar .navbar-nav>li>a{
+		text-align: center;
+	}
+
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		border-color: $transparent;
+	}
+
+	.photo{
+
+		height: auto;
+
+		p{
+			text-align: center;
+		}
+		h2.subHeaders{
+			@include subheaders;
+		}
+
+		.grid{
+			margin: 0 auto;
+			display: block;
+			
+		}
+
+	}
+
+}
+
+
+@media(min-width:768px){
+
+	
+	.splash{
+		padding-top: 10vh;
+	}
+
+
+}
+
+
+
+
+@media (max-width: 992px) {
+	.photo{
+		padding: 20px;
+	}
+
+	#photography{
+		img{
+			width: 100% !important;
+			height: auto!important;
+		}
+	}
+
+	#cinematography{
+		img{
+			width: 150%!important;
+			height: auto!important;
+		}
+	}
+}
+
+
+@media(min-width:992px){
+	.photo{
+		max-height: 110vh;
+		height: 100vh;
+	}
+
+	#cinematography{
+		img{
+			width: 400px!important;
+		}
+	}
+
+}
+@media(min-width:1200px){
+
+
+}
+
+
